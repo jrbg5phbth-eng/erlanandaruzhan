@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ерлан & Аружан | Беташар</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;overflow-x:hidden}body{font-family:'Montserrat',sans-serif;background:#faf7f2;color:#333;margin:0;padding:0}
+.frame{position:absolute;top:10px;left:10px;right:10px;bottom:10px;border:1px solid rgba(200,162,90,.35);pointer-events:none}
+.corner{position:absolute;font-size:20px;color:#c8a25a;opacity:.5;pointer-events:none}
+.top-left{top:22px;left:22px}.top-right{top:22px;right:22px}
+.bottom-left{bottom:22px;left:22px}.bottom-right{bottom:22px;right:22px}
+
+.hero{min-height:100svh;width:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:white;background:radial-gradient(circle at top,#e6cf9a 0%,#c8a25a 40%,#9b7a3f 100%)}
+.hero-content{max-width:900px}
+.invite{letter-spacing:4px;text-transform:uppercase;font-size:14px;margin-bottom:15px}
+.names{font-family:'Cormorant Garamond',serif;font-size:85px;margin-bottom:10px}
+.event{font-size:32px;margin-bottom:20px}
+.date{display:inline-block;padding:12px 30px;border:1px solid rgba(255,255,255,.6);border-radius:50px;font-size:22px}
+
+.section{padding:80px 20px}
+.container{width:100%;max-width:1000px;margin:auto;padding:0 20px}
+.title{font-family:'Cormorant Garamond',serif;font-size:52px;text-align:center;color:#9b7a3f;margin-bottom:25px}
+.text{max-width:800px;margin:auto;text-align:center;font-size:20px;line-height:1.9}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;margin-top:50px}
+.card{background:white;padding:35px;border-radius:20px;border:1px solid rgba(200,162,90,.25);transition:.3s}
+.card:hover{transform:translateY(-4px);border-color:#c8a25a}
+.card h3{margin-bottom:10px;color:#9b7a3f}
+
+.countdown{background:#f4ede2}
+.timer{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:40px}
+.box{width:120px;padding:20px;background:white;border-radius:20px}
+.box span{display:block;font-size:40px;font-weight:bold;color:#9b7a3f}
+
+.rsvp{text-align:center;background:white}
+.btn{display:inline-block;margin-top:25px;padding:15px 35px;background:#9b7a3f;color:white;text-decoration:none;border-radius:50px;font-weight:600}
+.contact{margin-top:15px;font-size:18px}
+
+.footer{background:#9b7a3f;color:white;text-align:center;padding:50px 20px}
+.footer h2{font-family:'Cormorant Garamond',serif;font-size:42px}
+
+#musicBtn{position:fixed;bottom:25px;right:25px;padding:12px 20px;border:none;border-radius:50px;background:#9b7a3f;color:white;cursor:pointer;z-index:1001}
+
+@media(max-width:768px){
+.names{font-size:55px}.event{font-size:24px}.title{font-size:40px}.text{font-size:18px}.box{width:90px}
+}
+</style>
+</head>
+<body>
+
+<div class="frame"></div>
+<div class="corner top-left">✿</div>
+<div class="corner top-right">✿</div>
+<div class="corner bottom-left">✿</div>
+<div class="corner bottom-right">✿</div>
+
+<section class="hero">
+<div class="hero-content">
+<div class="invite">БЕТАШАР САЛТАНАТЫ</div>
+<h1 class="names">Ерлан & Аружан</h1>
+<div class="event">Құрметті қонақтар!</div>
+<div class="date">25.07.2026 • 18:00</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="title">Қуанышымызға ортақ болыңыздар!</h2>
+<div class="text">
+Сіздерді Ерлан мен Аружанның беташар салтанатына арналған ақ дастарханымыздың қадірлі қонағы болуға шақырамыз.
+Қуанышымызға ортақ болып, ақ тілектеріңізді арнауға келіңіздер!
+</div>
+
+<div class="cards">
+<div class="card"><h3>📅 Күні</h3><p>25 шілде 2026 жыл</p></div>
+<div class="card"><h3>🕕 Уақыты</h3><p>18:00</p></div>
+<div class="card"><h3>📍 Өтетін орны</h3><p>Kamelot мейрамханасы</p></div>
+</div>
+</div>
+</section>
+
+<section class="section countdown">
+<div class="container">
+<h2 class="title">Тойға дейін</h2>
+<div class="timer">
+<div class="box"><span id="days">0</span>Күн</div>
+<div class="box"><span id="hours">0</span>Сағат</div>
+<div class="box"><span id="minutes">0</span>Минут</div>
+<div class="box"><span id="seconds">0</span>Секунд</div>
+</div>
+</div>
+</section>
+
+<section class="section rsvp">
+<div class="container">
+<h2 class="title">Қатысуды растау</h2>
+<p>WhatsApp арқылы хабарласа аласыз</p>
+<a href="https://wa.me/77071737870?text=Сәлеметсіз бе! Ерлан мен Аружанның беташар салтанатына қатысатынымды растаймын." class="btn">📱 Қатысатынымды растау</a>
+<div class="contact">📞 +7 707 173 78 70</div>
+</div>
+</section>
+
+<footer class="footer">
+<h2>Ерлан ❤️ Аружан</h2>
+<p>Сіздерді асыға күтеміз!</p>
+</footer>
+
+<button id="musicBtn">🎵 Музыканы қосу</button>
+<audio id="bgMusic" loop>
+<source src="Ilhan - Вальс.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const weddingDate=new Date("July 25, 2026 18:00:00").getTime();
+setInterval(()=>{
+const now=new Date().getTime();
+const distance=weddingDate-now;
+document.getElementById("days").innerHTML=Math.floor(distance/(1000*60*60*24));
+document.getElementById("hours").innerHTML=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+document.getElementById("minutes").innerHTML=Math.floor((distance%(1000*60*60))/(1000*60));
+document.getElementById("seconds").innerHTML=Math.floor((distance%(1000*60))/1000);
+},1000);
+
+const music=document.getElementById("bgMusic");
+const musicBtn=document.getElementById("musicBtn");
+musicBtn.addEventListener("click",()=>{
+if(music.paused){music.play();musicBtn.innerHTML="🔇 Музыканы өшіру";}
+else{music.pause();musicBtn.innerHTML="🎵 Музыканы қосу";}
+});
+</script>
+</body>
+</html>
